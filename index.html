@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عيادة د. أحمد منيسي للأسنان | Dr. Ahmed Menecy Dental Clinic</title>
+<meta name="description" content="Dr. Ahmed Menecy Dental Clinic – Camp Caesar, Alexandria. Book your dental appointment online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0e7c86; --primary-dark:#0a5c64; --primary-light:#e6f4f5;
+    --accent:#f5a623; --ink:#16263a; --muted:#5b6b7c; --line:#e3e9ef;
+    --bg:#f7fafc; --white:#fff; --wa:#25d366; --radius:16px;
+    --shadow:0 10px 30px rgba(14,60,80,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter','Cairo',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+  html[lang="ar"] body{font-family:'Cairo','Inter',system-ui,sans-serif}
+  a{color:inherit;text-decoration:none}
+  .container{width:min(1120px,92%);margin-inline:auto}
+  svg.i{width:22px;height:22px;flex-shrink:0}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;line-height:1.2}
+  .brand .logo{width:42px;height:42px;border-radius:12px;background:var(--primary);display:grid;place-items:center;color:#fff}
+  .brand small{display:block;font-weight:500;color:var(--muted);font-size:.78rem}
+  .menu{display:flex;gap:26px;font-weight:600;font-size:.95rem}
+  .menu a{color:var(--muted)} .menu a:hover{color:var(--primary)}
+  .nav-actions{display:flex;gap:10px;align-items:center}
+  .lang-btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-weight:700;cursor:pointer;font-family:inherit;color:var(--ink)}
+  .lang-btn:hover{border-color:var(--primary);color:var(--primary)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 24px;font-weight:700;font-size:1rem;cursor:pointer;font-family:inherit;transition:.2s}
+  .btn-primary{background:var(--primary);color:#fff} .btn-primary:hover{background:var(--primary-dark)}
+  .btn-outline{background:#fff;color:var(--primary);border:2px solid var(--primary)} .btn-outline:hover{background:var(--primary-light)}
+  .btn-wa{background:var(--wa);color:#fff} .btn-wa:hover{filter:brightness(.95)}
+  .btn-sm{padding:9px 18px;font-size:.92rem}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--primary-light) 0%,#fff 70%);padding:80px 0 70px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .tag{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);color:var(--primary);font-weight:700;font-size:.85rem;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.15;font-weight:800;margin-bottom:18px}
+  .hero h1 span{color:var(--primary)}
+  .hero p{font-size:1.12rem;color:var(--muted);max-width:540px;margin-bottom:30px}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-card{background:#fff;border-radius:24px;box-shadow:var(--shadow);padding:30px;position:relative}
+  .hero-card .tooth{width:86px;height:86px;border-radius:22px;background:var(--primary);display:grid;place-items:center;color:#fff;margin-bottom:18px}
+  .hero-card h3{font-size:1.2rem;margin-bottom:14px}
+  .hc-row{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+  .hc-row svg{color:var(--primary);margin-top:2px}
+  .hc-row b{color:var(--ink);display:block}
+  .status{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.85rem;padding:4px 10px;border-radius:999px;position:absolute;top:30px;inset-inline-end:30px}
+  .status.open{background:#e7f8ee;color:#138a43} .status.closed{background:#fdecec;color:#c0392b}
+  .status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+
+  /* Sections */
+  section{padding:84px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 46px}
+  .sec-head .eyebrow{color:var(--primary);font-weight:800;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+  .sec-head h2{font-size:clamp(1.7rem,3vw,2.3rem);margin:6px 0 10px;line-height:1.25}
+  .sec-head p{color:var(--muted)}
+  .alt{background:var(--bg)}
+
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.2s}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+  .svc .ic{width:52px;height:52px;border-radius:14px;background:var(--primary-light);color:var(--primary);display:grid;place-items:center;margin-bottom:16px}
+  .svc h3{font-size:1.1rem;margin-bottom:6px}
+  .svc p{color:var(--muted);font-size:.95rem}
+
+  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+  .why div{display:flex;gap:14px;align-items:flex-start}
+  .why .ic{width:44px;height:44px;border-radius:12px;background:var(--primary);color:#fff;display:grid;place-items:center;flex-shrink:0}
+  .why h4{font-size:1.02rem;margin-bottom:2px}
+  .why p{color:var(--muted);font-size:.93rem}
+
+
+  /* About + gallery */
+  .about-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:44px;align-items:center}
+  .photo{position:relative;border-radius:24px;overflow:hidden;background:var(--primary-light);box-shadow:var(--shadow)}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo .ph{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--primary);font-weight:700;font-size:.92rem;text-align:center;padding:16px;border:2px dashed #b9dfe2;border-radius:inherit}
+  .photo .ph svg{width:44px;height:44px}
+  .photo.noimg img{display:none}
+  .photo.noimg .ph{display:flex}
+  .doc-photo{aspect-ratio:4/5}
+  .about-txt .eyebrow{color:var(--primary);font-weight:800;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+  .about-txt h2{font-size:clamp(1.7rem,3vw,2.3rem);margin:6px 0 4px;line-height:1.25}
+  .about-txt .role{color:var(--primary);font-weight:700;margin-bottom:14px}
+  .about-txt p{color:var(--muted);margin-bottom:22px}
+  .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:56px}
+  .gallery .photo{aspect-ratio:4/3}
+  @media (max-width:900px){ .about-grid{grid-template-columns:1fr} .doc-photo{max-width:380px;margin-inline:auto;width:100%} }
+  @media (max-width:560px){ .gallery{grid-template-columns:1fr 1fr} .gallery .photo:first-child{grid-column:1/-1} }
+
+  /* Booking */
+  .booking-wrap{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(280px,.8fr);gap:28px;align-items:start}
+  .booking-wrap>*,.contact-grid>*,.hero-grid>*{min-width:0}
+  .card{background:#fff;border-radius:22px;box-shadow:var(--shadow);padding:32px;border:1px solid var(--line)}
+  .step-title{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;margin:4px 0 14px}
+  .step-title .n{width:28px;height:28px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:.85rem}
+  .field{margin-bottom:22px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  label.lb{display:block;font-weight:600;font-size:.92rem;margin-bottom:6px}
+  input,select,textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:.98rem;background:#fff;color:var(--ink);transition:.15s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px var(--primary-light)}
+  textarea{resize:vertical;min-height:80px}
+  .invalid{border-color:#e05252!important}
+  .err{color:#c0392b;font-size:.83rem;margin-top:4px;display:none}
+  .err.show{display:block}
+
+  .chips{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+  .chip{flex:0 0 auto;border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:10px 14px;cursor:pointer;text-align:center;min-width:92px;font-family:inherit;color:var(--ink);transition:.15s}
+  .chip:hover:not(:disabled){border-color:var(--primary)}
+  .chip .d1{display:block;font-size:.8rem;color:var(--muted);font-weight:600}
+  .chip .d2{display:block;font-size:1.05rem;font-weight:800}
+  .chip.sel{background:var(--primary);border-color:var(--primary);color:#fff}
+  .chip.sel .d1{color:#d9f1f3}
+  .slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+  .slot{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:10px 6px;font-weight:700;cursor:pointer;font-family:inherit;color:var(--ink);font-size:.93rem}
+  .slot:hover:not(:disabled){border-color:var(--primary);color:var(--primary)}
+  .slot.sel{background:var(--primary);color:#fff;border-color:var(--primary)}
+  .slot:disabled{opacity:.4;cursor:not-allowed;text-decoration:line-through}
+  .hint{color:var(--muted);font-size:.9rem}
+  .summary{background:var(--primary-light);border-radius:14px;padding:16px 18px;margin-bottom:18px;font-size:.95rem;display:none}
+  .summary.show{display:block}
+  .summary b{color:var(--primary-dark)}
+  .submit-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .note{font-size:.84rem;color:var(--muted);margin-top:12px}
+
+  .side h3{font-size:1.15rem;margin-bottom:14px}
+  .hours{width:100%;border-collapse:collapse;font-size:.95rem}
+  .hours td{padding:9px 0;border-bottom:1px solid var(--line);white-space:nowrap}
+  .hours td:last-child{text-align:end;font-weight:600}
+  .hours tr.closed td:last-child{color:#c0392b;font-weight:500}
+  .hours tr.today td{color:var(--primary);font-weight:800}
+  .side .contact-line{display:flex;gap:10px;align-items:center;margin-top:12px;font-weight:600}
+  .side .contact-line svg{color:var(--primary)}
+
+  /* Success modal */
+  .modal{position:fixed;inset:0;background:rgba(10,30,45,.55);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+  .modal.show{display:flex}
+  .modal .box{background:#fff;border-radius:22px;max-width:440px;width:100%;padding:34px;text-align:center}
+  .modal .ok{width:70px;height:70px;border-radius:50%;background:#e7f8ee;color:#138a43;display:grid;place-items:center;margin:0 auto 16px}
+  .modal h3{font-size:1.35rem;margin-bottom:8px}
+  .modal p{color:var(--muted);margin-bottom:20px}
+  .modal .btns{display:flex;flex-direction:column;gap:10px}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;align-items:stretch}
+  .info-list{display:flex;flex-direction:column;gap:18px}
+  .info-item{display:flex;gap:14px;align-items:flex-start}
+  .info-item .ic{width:46px;height:46px;border-radius:12px;background:var(--primary-light);color:var(--primary);display:grid;place-items:center;flex-shrink:0}
+  .info-item b{display:block}
+  .info-item span,.info-item a{color:var(--muted)}
+  .info-item a:hover{color:var(--primary)}
+  .map{border-radius:22px;overflow:hidden;min-height:340px;border:1px solid var(--line)}
+  .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+  [dir="ltr"] .ltr-num, .ltr-num{direction:ltr;unicode-bidi:embed}
+
+  footer{background:var(--ink);color:#b8c4d0;padding:34px 0;font-size:.92rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  footer a{color:#fff;font-weight:600}
+  .socials{display:flex;gap:10px}
+  .socials a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center}
+  .socials a:hover{background:var(--primary)}
+
+  .fab{position:fixed;bottom:22px;inset-inline-end:22px;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.45);z-index:60}
+  .fab svg{width:30px;height:30px}
+
+  @media (max-width:900px){
+    .hero-grid,.booking-wrap,.contact-grid{grid-template-columns:1fr}
+    .menu{display:none}
+    .hero{padding:50px 0}
+    section{padding:60px 0}
+  }
+  @media (max-width:560px){
+    .row2{grid-template-columns:1fr}
+    .card{padding:22px}
+    .brand small{display:none}
+    .nav-actions .btn-book{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tooth" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 3c-2.5 0-4 2-4 4.5 0 2 .7 3.3 1.3 4.8.6 1.6.7 3.4 1.1 5.4.4 2 1 3.3 2.1 3.3 1.5 0 1.6-2.4 2.1-4.3.3-1.2.9-2 2.4-2s2.1.8 2.4 2c.5 1.9.6 4.3 2.1 4.3 1.1 0 1.7-1.3 2.1-3.3.4-2 .5-3.8 1.1-5.4.6-1.5 1.3-2.8 1.3-4.8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16.5" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 3.5h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.6 6.6l1.4-2.3 4.5 1.8V19a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21.5s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 20s-8-4.8-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 9c0 6.2-8 11-8 11z"/></symbol>
+    <symbol id="i-screw" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l-1.5 4h-7z"/><path d="M9 9h6M9.5 12h5M10 15h4M10.5 18h3M12 18v3"/></g></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/></symbol>
+    <symbol id="i-braces" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="8" width="5" height="8" rx="1.5"/><rect x="9.5" y="8" width="5" height="8" rx="1.5"/><rect x="16" y="8" width="5" height="8" rx="1.5"/><path d="M1.5 12h21"/></g></symbol>
+    <symbol id="i-child" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4.5"/><path d="M10.3 8.5h.01M13.7 8.5h.01M10.5 10.3c.8.6 2.2.6 3 0M5 21c.8-3.6 3.6-6 7-6s6.2 2.4 7 6"/></g></symbol>
+    <symbol id="i-root" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12c0 4-1 6-2 8l-1 10-3-6-3 6-1-10c-1-2-2-4-2-8z"/><path d="M12 6v7"/></g></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></symbol>
+    <symbol id="i-img" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="2"/><path d="M3.5 18l5-5 4 4 3-3 5 5"/></g></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4.2 4.2-7 8-7s7 2.8 8 7"/></g></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand">
+      <span class="logo"><svg class="i"><use href="#i-tooth"/></svg></span>
+      <span><span data-t="brand">عيادة د. أحمد منيسي</span><small data-t="brandSub">لطب وتجميل الأسنان</small></span>
+    </a>
+    <nav class="menu">
+      <a href="#services" data-t="navServices">الخدمات</a>
+      <a href="#about" data-t="navAbout">عن العيادة</a>
+      <a href="#booking" data-t="navBook">احجز موعد</a>
+      <a href="#contact" data-t="navContact">تواصل معنا</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-btn" id="langBtn" type="button">English</button>
+      <a href="#booking" class="btn btn-primary btn-sm btn-book" data-t="bookNow">احجز الآن</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag"><svg class="i" style="width:16px;height:16px"><use href="#i-pin"/></svg><span data-t="heroTag">كامب شيزار، الإسكندرية</span></span>
+      <h1 data-t-html="heroTitle">ابتسامة صحية <span>تبدأ من هنا</span></h1>
+      <p data-t="heroText">رعاية متكاملة للأسنان لكل أفراد العائلة في بيئة مريحة وآمنة. احجز موعدك أونلاين في أقل من دقيقة.</p>
+      <div class="hero-ctas">
+        <a href="#booking" class="btn btn-primary"><svg class="i"><use href="#i-cal"/></svg><span data-t="bookAppt">احجز موعدك</span></a>
+        <a href="tel:+201006367797" class="btn btn-outline"><svg class="i"><use href="#i-phone"/></svg><span data-t="callUs">اتصل بنا</span></a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <span class="status" id="openStatus"></span>
+      <div class="tooth"><svg class="i" style="width:46px;height:46px"><use href="#i-tooth"/></svg></div>
+      <h3 data-t="clinicName">عيادة د. أحمد منيسي للأسنان</h3>
+      <div class="hc-row"><svg class="i"><use href="#i-clock"/></svg><div><b data-t="hoursShort">السبت • الاثنين • الأربعاء</b><span data-t="hoursTime">٤:٠٠ م – ١٢:٠٠ ص</span></div></div>
+      <div class="hc-row"><svg class="i"><use href="#i-pin"/></svg><div><b data-t="addrLine1">٥٦ شارع عبد المنعم سند</b><span data-t="addrLine2">كامب شيزار، الإسكندرية</span></div></div>
+      <div class="hc-row"><svg class="i"><use href="#i-phone"/></svg><div><b class="ltr-num">0100 636 7797</b><span data-t="callOrWa">اتصال أو واتساب</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" data-t="svcEyebrow">خدماتنا</div>
+      <h2 data-t="svcTitle">كل ما تحتاجه لابتسامة صحية</h2>
+      <p data-t="svcText">نقدم مجموعة شاملة من خدمات طب الأسنان العلاجية والتجميلية.</p>
+    </div>
+    <div class="services" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ABOUT THE DOCTOR + CLINIC PHOTOS -->
+<!-- Put the photos in an "images" folder next to this file:
+     images/doctor.jpg, images/clinic-1.jpg, images/clinic-2.jpg, images/clinic-3.jpg
+     Until a photo exists, a neat placeholder is shown instead. -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="photo doc-photo">
+        <img src="images/doctor.jpg" data-alt="altDoctor" alt="" onerror="this.parentElement.classList.add('noimg')">
+        <div class="ph"><svg><use href="#i-user"/></svg><span data-t="phDoctor"></span></div>
+      </div>
+      <div class="about-txt">
+        <div class="eyebrow" data-t="abEyebrow"></div>
+        <h2 data-t="abName"></h2>
+        <div class="role" data-t="abRole"></div>
+        <p data-t="abText"></p>
+        <a href="#booking" class="btn btn-primary"><svg class="i"><use href="#i-cal"/></svg><span data-t="bookAppt"></span></a>
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="photo"><img src="images/clinic-1.jpg" data-alt="altClinic" alt="" onerror="this.parentElement.classList.add('noimg')"><div class="ph"><svg><use href="#i-img"/></svg><span data-t="phClinic"></span></div></div>
+      <div class="photo"><img src="images/clinic-2.jpg" data-alt="altClinic" alt="" onerror="this.parentElement.classList.add('noimg')"><div class="ph"><svg><use href="#i-img"/></svg><span data-t="phClinic"></span></div></div>
+      <div class="photo"><img src="images/clinic-3.jpg" data-alt="altClinic" alt="" onerror="this.parentElement.classList.add('noimg')"><div class="ph"><svg><use href="#i-img"/></svg><span data-t="phClinic"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" data-t="whyEyebrow">لماذا نحن</div>
+      <h2 data-t="whyTitle">راحتك وسلامتك أولويتنا</h2>
+    </div>
+    <div class="why">
+      <div><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span><span><h4 data-t="w1t">تعقيم كامل</h4><p data-t="w1p">التزام صارم بمعايير التعقيم ومكافحة العدوى.</p></span></div>
+      <div><span class="ic"><svg class="i"><use href="#i-heart"/></svg></span><span><h4 data-t="w2t">علاج بدون ألم</h4><p data-t="w2p">نهتم براحتك في كل خطوة من خطوات العلاج.</p></span></div>
+      <div><span class="ic"><svg class="i"><use href="#i-spark"/></svg></span><span><h4 data-t="w3t">تقنيات حديثة</h4><p data-t="w3p">أجهزة ومواد حديثة لنتائج تدوم.</p></span></div>
+      <div><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span><span><h4 data-t="w4t">مواعيد مسائية</h4><p data-t="w4p">نعمل حتى منتصف الليل لتناسب يومك.</p></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" data-t="bkEyebrow">الحجز أونلاين</div>
+      <h2 data-t="bkTitle">احجز موعدك في ٣ خطوات</h2>
+      <p data-t="bkText">اختر الخدمة واليوم والوقت المناسب، وسيتم إرسال طلب الحجز للعيادة عبر واتساب لتأكيده.</p>
+    </div>
+    <div class="booking-wrap">
+      <form class="card" id="bookingForm" novalidate>
+        <div class="step-title"><span class="n">1</span><span data-t="step1">بياناتك والخدمة</span></div>
+        <div class="row2">
+          <div class="field">
+            <label class="lb" for="fName" data-t="lName">الاسم بالكامل</label>
+            <input id="fName" autocomplete="name" data-ph="phName" placeholder="مثال: محمد أحمد">
+            <div class="err" id="eName" data-t="errName">من فضلك اكتب اسمك</div>
+          </div>
+          <div class="field">
+            <label class="lb" for="fPhone" data-t="lPhone">رقم الموبايل</label>
+            <input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="01xxxxxxxxx" dir="ltr">
+            <div class="err" id="ePhone" data-t="errPhone">اكتب رقم موبايل صحيح (١١ رقم يبدأ بـ 01)</div>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label class="lb" for="fService" data-t="lService">الخدمة المطلوبة</label>
+            <select id="fService"></select>
+          </div>
+          <div class="field">
+            <label class="lb" for="fType" data-t="lType">نوع الزيارة</label>
+            <select id="fType">
+              <option value="new" data-t="tNew">كشف جديد</option>
+              <option value="follow" data-t="tFollow">متابعة</option>
+              <option value="emergency" data-t="tEmerg">حالة طارئة (ألم)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="step-title"><span class="n">2</span><span data-t="step2">اختر اليوم</span></div>
+        <div class="field">
+          <div class="chips" id="days"></div>
+          <div class="err" id="eDay" data-t="errDay">من فضلك اختر اليوم</div>
+        </div>
+
+        <div class="step-title"><span class="n">3</span><span data-t="step3">اختر الوقت</span></div>
+        <div class="field">
+          <div class="slots" id="slots"></div>
+          <p class="hint" id="slotHint" data-t="pickDayFirst">اختر اليوم أولاً لعرض المواعيد المتاحة.</p>
+          <div class="err" id="eSlot" data-t="errSlot">من فضلك اختر الوقت</div>
+        </div>
+
+        <div class="field">
+          <label class="lb" for="fNotes" data-t="lNotes">ملاحظات (اختياري)</label>
+          <textarea id="fNotes" data-ph="phNotes" placeholder="مثال: ألم في ضرس العقل منذ يومين"></textarea>
+        </div>
+
+        <div class="summary" id="summary"></div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn-wa"><svg class="i"><use href="#i-wa"/></svg><span data-t="sendWa">إرسال الحجز عبر واتساب</span></button>
+        </div>
+        <p class="note" data-t="bkNote">سيتم فتح واتساب برسالة جاهزة. الموعد مبدئي حتى تأكيده من العيادة.</p>
+      </form>
+
+      <aside class="card side">
+        <h3 data-t="hoursTitle">مواعيد العمل</h3>
+        <table class="hours" id="hoursTable"></table>
+        <a class="contact-line" href="tel:+201006367797"><svg class="i"><use href="#i-phone"/></svg><span class="ltr-num">0100 636 7797</span></a>
+        <a class="contact-line" href="https://wa.me/201006367797" target="_blank" rel="noopener"><svg class="i" style="color:var(--wa)"><use href="#i-wa"/></svg><span data-t="waChat">تواصل عبر واتساب</span></a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="alt">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow" data-t="ctEyebrow">تواصل معنا</div>
+      <h2 data-t="ctTitle">زورنا في العيادة</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="card info-list">
+        <div class="info-item"><span class="ic"><svg class="i"><use href="#i-pin"/></svg></span><div><b data-t="addrTitle">العنوان</b><span data-t="addrFull">٥٦ شارع عبد المنعم سند، كامب شيزار، الإسكندرية</span></div></div>
+        <div class="info-item"><span class="ic"><svg class="i"><use href="#i-phone"/></svg></span><div><b data-t="phoneTitle">الهاتف / واتساب</b><a href="tel:+201006367797" class="ltr-num">0100 636 7797</a></div></div>
+        <div class="info-item"><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span><div><b data-t="hoursTitle">مواعيد العمل</b><span data-t="hoursSummary">السبت والاثنين والأربعاء: ٤ م – ١٢ ص</span></div></div>
+        <div class="info-item"><span class="ic"><svg class="i"><use href="#i-fb"/></svg></span><div><b>Facebook</b><a href="https://www.facebook.com/AhmedMenecyDentalClinic" target="_blank" rel="noopener">AhmedMenecyDentalClinic</a></div></div>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=56+Abdel+Moneim+Sanad+St,+Camp+Caesar,+Alexandria,+Egypt" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg><span data-t="directions">الاتجاهات على خرائط جوجل</span></a>
+      </div>
+      <div class="map">
+        <iframe title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=56+Abdel+Moneim+Sanad+St,+Camp+Caesar,+Alexandria,+Egypt&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div>© <span id="yr"></span> <span data-t="clinicName">عيادة د. أحمد منيسي للأسنان</span></div>
+    <div class="socials">
+      <a href="https://www.facebook.com/AhmedMenecyDentalClinic" target="_blank" rel="noopener" aria-label="Facebook"><svg class="i"><use href="#i-fb"/></svg></a>
+      <a href="https://wa.me/201006367797" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="i"><use href="#i-wa"/></svg></a>
+      <a href="tel:+201006367797" aria-label="Call"><svg class="i"><use href="#i-phone"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/201006367797" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="box">
+    <div class="ok"><svg class="i" style="width:36px;height:36px"><use href="#i-check"/></svg></div>
+    <h3 data-t="mTitle">طلب الحجز جاهز!</h3>
+    <p data-t="mText">تم فتح واتساب برسالة الحجز. اضغط "إرسال" في واتساب، وستتواصل معك العيادة لتأكيد الموعد.</p>
+    <div class="btns">
+      <a class="btn btn-wa" id="mWaLink" target="_blank" rel="noopener"><svg class="i"><use href="#i-wa"/></svg><span data-t="mOpenAgain">لم يُفتح واتساب؟ اضغط هنا</span></a>
+      <button class="btn btn-outline" id="mClose" type="button" data-t="mClose">تم</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============ CLINIC SETTINGS (edit here) ============ */
+const CLINIC = {
+  whatsapp: "201006367797",          // international format, no + or spaces
+  // Working days: 0=Sun,1=Mon,...,6=Sat  →  open: Sat, Mon, Wed
+  openDays: [6, 1, 3],
+  openFrom: "16:00",                 // 4:00 PM
+  openTo:   "24:00",                 // 12:00 AM (midnight)
+  slotMinutes: 30,
+  daysAhead: 21                      // how far ahead patients can book
+};
+const SERVICES = [
+  {id:"checkup", icon:"i-tooth",  en:["Check-up & Cleaning","Full examination, scaling and polishing to keep teeth and gums healthy."], ar:["كشف وتنظيف جير","فحص شامل وتنظيف وتلميع للحفاظ على صحة الأسنان واللثة."]},
+  {id:"filling", icon:"i-shield", en:["Tooth-coloured Fillings","Natural-looking composite fillings for cavities and chipped teeth."], ar:["حشو تجميلي","حشوات بلون الأسنان الطبيعي لعلاج التسوس والكسور."]},
+  {id:"rct",     icon:"i-root",   en:["Root Canal Treatment","Save painful or infected teeth with comfortable endodontic care."], ar:["علاج العصب","إنقاذ الأسنان الملتهبة أو المؤلمة بعلاج عصب مريح."]},
+  {id:"crowns",  icon:"i-crown",  en:["Crowns & Bridges","Restore broken or missing teeth with durable, aesthetic crowns."], ar:["تركيبات وتيجان","تعويض الأسنان المكسورة أو المفقودة بتركيبات قوية وجمالية."]},
+  {id:"implant", icon:"i-screw",  en:["Dental Implants","A permanent, natural-feeling replacement for missing teeth."], ar:["زراعة الأسنان","بديل ثابت وطبيعي للأسنان المفقودة."]},
+  {id:"whiten",  icon:"i-spark",  en:["Teeth Whitening","Brighten your smile safely in the clinic."], ar:["تبييض الأسنان","ابتسامة أكثر إشراقاً بأمان داخل العيادة."]},
+  {id:"ortho",   icon:"i-braces", en:["Orthodontics","Braces and aligners to straighten teeth and improve your bite."], ar:["تقويم الأسنان","تقويم لتعديل وضع الأسنان وتحسين الإطباق."]},
+  {id:"kids",    icon:"i-child",  en:["Children's Dentistry","Gentle, friendly dental care for little smiles."], ar:["أسنان الأطفال","رعاية لطيفة ومريحة لأسنان الأطفال."]},
+  {id:"extract", icon:"i-heart",  en:["Extractions","Simple and wisdom-tooth extractions with minimal discomfort."], ar:["خلع الأسنان","خلع عادي وجراحي لضرس العقل بأقل ألم ممكن."]}
+];
+
+/* ============ TRANSLATIONS ============ */
+const T = {
+  ar:{
+    brand:"عيادة د. أحمد منيسي", brandSub:"لطب وتجميل الأسنان",
+    navServices:"الخدمات", navAbout:"عن العيادة", navBook:"احجز موعد", navContact:"تواصل معنا",
+    bookNow:"احجز الآن", heroTag:"كامب شيزار، الإسكندرية",
+    heroTitle:'ابتسامة صحية <span>تبدأ من هنا</span>',
+    heroText:"رعاية متكاملة للأسنان لكل أفراد العائلة في بيئة مريحة وآمنة. احجز موعدك أونلاين في أقل من دقيقة.",
+    bookAppt:"احجز موعدك", callUs:"اتصل بنا", clinicName:"عيادة د. أحمد منيسي للأسنان",
+    hoursShort:"السبت • الاثنين • الأربعاء", hoursTime:"٤:٠٠ م – ١٢:٠٠ ص",
+    addrLine1:"٥٦ شارع عبد المنعم سند", addrLine2:"كامب شيزار، الإسكندرية", callOrWa:"اتصال أو واتساب",
+    openNow:"مفتوح الآن", closedNow:"مغلق الآن",
+    svcEyebrow:"خدماتنا", svcTitle:"كل ما تحتاجه لابتسامة صحية", svcText:"نقدم مجموعة شاملة من خدمات طب الأسنان العلاجية والتجميلية.",
+    whyEyebrow:"لماذا نحن", whyTitle:"راحتك وسلامتك أولويتنا",
+    w1t:"تعقيم كامل", w1p:"التزام صارم بمعايير التعقيم ومكافحة العدوى.",
+    w2t:"علاج بدون ألم", w2p:"نهتم براحتك في كل خطوة من خطوات العلاج.",
+    w3t:"تقنيات حديثة", w3p:"أجهزة ومواد حديثة لنتائج تدوم.",
+    w4t:"مواعيد مسائية", w4p:"نعمل حتى منتصف الليل لتناسب يومك.",
+    bkEyebrow:"الحجز أونلاين", bkTitle:"احجز موعدك في ٣ خطوات",
+    bkText:"اختر الخدمة واليوم والوقت المناسب، وسيتم إرسال طلب الحجز للعيادة عبر واتساب لتأكيده.",
+    step1:"بياناتك والخدمة", step2:"اختر اليوم", step3:"اختر الوقت",
+    lName:"الاسم بالكامل", phName:"مثال: محمد أحمد", lPhone:"رقم الموبايل",
+    lService:"الخدمة المطلوبة", lType:"نوع الزيارة", tNew:"كشف جديد", tFollow:"متابعة", tEmerg:"حالة طارئة (ألم)",
+    lNotes:"ملاحظات (اختياري)", phNotes:"مثال: ألم في ضرس العقل منذ يومين",
+    errName:"من فضلك اكتب اسمك", errPhone:"اكتب رقم موبايل صحيح (١١ رقم يبدأ بـ 01)", errDay:"من فضلك اختر اليوم", errSlot:"من فضلك اختر الوقت",
+    pickDayFirst:"اختر اليوم أولاً لعرض المواعيد المتاحة.", noSlots:"لا توجد مواعيد متبقية في هذا اليوم، اختر يوماً آخر.",
+    today:"اليوم", tomorrow:"غداً",
+    sendWa:"إرسال الحجز عبر واتساب", bkNote:"سيتم فتح واتساب برسالة جاهزة. الموعد مبدئي حتى تأكيده من العيادة.",
+    hoursTitle:"مواعيد العمل", waChat:"تواصل عبر واتساب", closed:"مغلق", hoursRange:"٤:٠٠ م – ١٢:٠٠ ص",
+    ctEyebrow:"تواصل معنا", ctTitle:"زورنا في العيادة", addrTitle:"العنوان",
+    addrFull:"٥٦ شارع عبد المنعم سند، كامب شيزار، الإسكندرية", phoneTitle:"الهاتف / واتساب",
+    hoursSummary:"السبت والاثنين والأربعاء: ٤ م – ١٢ ص", directions:"الاتجاهات على خرائط جوجل",
+    mTitle:"طلب الحجز جاهز!", mText:'تم فتح واتساب برسالة الحجز. اضغط "إرسال" في واتساب، وستتواصل معك العيادة لتأكيد الموعد.',
+    mOpenAgain:"لم يُفتح واتساب؟ اضغط هنا", mClose:"تم",
+    sumLabel:"ملخص الحجز:",
+    msgHead:"مرحباً، أود حجز موعد في عيادة د. أحمد منيسي للأسنان 🦷",
+    msgName:"الاسم", msgPhone:"الموبايل", msgService:"الخدمة", msgType:"نوع الزيارة", msgDate:"اليوم", msgTime:"الوقت", msgNotes:"ملاحظات",
+    msgFoot:"برجاء تأكيد الموعد. شكراً!",
+    abEyebrow:"تعرّف على طبيبك", abName:"د. أحمد منيسي", abRole:"طبيب أسنان",
+    abText:"يستقبلكم د. أحمد منيسي وفريق العيادة في كامب شيزار بالإسكندرية لتقديم رعاية أسنان شاملة للكبار والأطفال، مع الحرص على شرح خطة العلاج بوضوح وراحة المريض في كل زيارة.",
+    phDoctor:"صورة الطبيب", phClinic:"صورة العيادة", altDoctor:"د. أحمد منيسي", altClinic:"عيادة د. أحمد منيسي للأسنان",
+    langBtn:"English", locale:"ar-EG"
+  },
+  en:{
+    brand:"Dr. Ahmed Menecy", brandSub:"Dental Clinic",
+    navServices:"Services", navAbout:"About", navBook:"Book", navContact:"Contact",
+    bookNow:"Book Now", heroTag:"Camp Caesar, Alexandria",
+    heroTitle:'A healthy smile <span>starts here</span>',
+    heroText:"Complete dental care for the whole family in a comfortable, safe setting. Book your appointment online in under a minute.",
+    bookAppt:"Book an Appointment", callUs:"Call Us", clinicName:"Dr. Ahmed Menecy Dental Clinic",
+    hoursShort:"Sat • Mon • Wed", hoursTime:"4:00 PM – 12:00 AM",
+    addrLine1:"56 Abdel Moneim Sanad St.", addrLine2:"Camp Caesar, Alexandria", callOrWa:"Call or WhatsApp",
+    openNow:"Open now", closedNow:"Closed now",
+    svcEyebrow:"Our Services", svcTitle:"Everything for a healthy smile", svcText:"A full range of general, restorative and cosmetic dental treatments.",
+    whyEyebrow:"Why choose us", whyTitle:"Your comfort and safety come first",
+    w1t:"Strict sterilisation", w1p:"Rigorous infection-control standards for every patient.",
+    w2t:"Gentle, pain-free care", w2p:"We focus on your comfort at every step.",
+    w3t:"Modern techniques", w3p:"Up-to-date equipment and materials for lasting results.",
+    w4t:"Evening hours", w4p:"Open until midnight to fit around your day.",
+    bkEyebrow:"Online booking", bkTitle:"Book in 3 easy steps",
+    bkText:"Choose a service, day and time — your request is sent to the clinic on WhatsApp for confirmation.",
+    step1:"Your details & service", step2:"Choose a day", step3:"Choose a time",
+    lName:"Full name", phName:"e.g. Mohamed Ahmed", lPhone:"Mobile number",
+    lService:"Service", lType:"Visit type", tNew:"New consultation", tFollow:"Follow-up", tEmerg:"Emergency (pain)",
+    lNotes:"Notes (optional)", phNotes:"e.g. Wisdom tooth pain for two days",
+    errName:"Please enter your name", errPhone:"Enter a valid mobile number (11 digits starting with 01)", errDay:"Please choose a day", errSlot:"Please choose a time",
+    pickDayFirst:"Choose a day first to see available times.", noSlots:"No times left on this day — please choose another day.",
+    today:"Today", tomorrow:"Tomorrow",
+    sendWa:"Send booking via WhatsApp", bkNote:"WhatsApp will open with a ready message. Your appointment is provisional until the clinic confirms it.",
+    hoursTitle:"Opening Hours", waChat:"Chat on WhatsApp", closed:"Closed", hoursRange:"4:00 PM – 12:00 AM",
+    ctEyebrow:"Contact", ctTitle:"Visit the clinic", addrTitle:"Address",
+    addrFull:"56 Abdel Moneim Sanad St., Camp Caesar, Alexandria", phoneTitle:"Phone / WhatsApp",
+    hoursSummary:"Sat, Mon & Wed: 4 PM – 12 AM", directions:"Get directions on Google Maps",
+    mTitle:"Your booking request is ready!", mText:'WhatsApp has opened with your booking message. Tap "Send" in WhatsApp and the clinic will contact you to confirm.',
+    mOpenAgain:"WhatsApp didn't open? Tap here", mClose:"Done",
+    sumLabel:"Booking summary:",
+    msgHead:"Hello, I'd like to book an appointment at Dr. Ahmed Menecy Dental Clinic 🦷",
+    msgName:"Name", msgPhone:"Mobile", msgService:"Service", msgType:"Visit type", msgDate:"Day", msgTime:"Time", msgNotes:"Notes",
+    msgFoot:"Please confirm the appointment. Thank you!",
+    abEyebrow:"Meet your dentist", abName:"Dr. Ahmed Menecy", abRole:"Dentist",
+    abText:"Dr. Ahmed Menecy and the clinic team welcome you in Camp Caesar, Alexandria, offering complete dental care for adults and children — with clear explanations of every treatment plan and your comfort at every visit.",
+    phDoctor:"Doctor's photo", phClinic:"Clinic photo", altDoctor:"Dr. Ahmed Menecy", altClinic:"Dr. Ahmed Menecy Dental Clinic",
+    langBtn:"العربية", locale:"en-GB"
+  }
+};
+
+/* ============ STATE ============ */
+let lang = "ar";
+let selDay = null;   // Date at midnight
+let selSlot = null;  // minutes from midnight
+const $ = s => document.querySelector(s);
+const t = k => T[lang][k];
+
+/* ============ HELPERS ============ */
+const toMin = hhmm => { const [h,m] = hhmm.split(":").map(Number); return h*60+m; };
+function fmtTime(min){
+  const h24 = Math.floor(min/60)%24, m = min%60;
+  const d = new Date(2000,0,1,h24,m);
+  return d.toLocaleTimeString(lang==="en"?"en-US":t("locale"), {hour:"numeric", minute:"2-digit", hour12:true});
+}
+function fmtDate(d, opts){ return d.toLocaleDateString(t("locale"), opts); }
+function sameDay(a,b){ return a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate(); }
+function startOfDay(d){ const x=new Date(d); x.setHours(0,0,0,0); return x; }
+
+/* ============ RENDER ============ */
+function applyLang(){
+  const html = document.documentElement;
+  html.lang = lang; html.dir = lang==="ar" ? "rtl" : "ltr";
+  document.querySelectorAll("[data-t]").forEach(el => { const v=t(el.dataset.t); if(v!==undefined) el.textContent=v; });
+  document.querySelectorAll("[data-t-html]").forEach(el => { el.innerHTML = t(el.dataset.tHtml); });
+  document.querySelectorAll("[data-ph]").forEach(el => { el.placeholder = t(el.dataset.ph); });
+  document.querySelectorAll("img[data-alt]").forEach(el => { el.alt = t(el.dataset.alt); });
+  $("#langBtn").textContent = t("langBtn");
+  renderServices(); renderServiceSelect(); renderHours(); renderDays(); renderSlots(); renderStatus(); renderSummary();
+}
+
+function renderServices(){
+  $("#servicesGrid").innerHTML = SERVICES.map(s => `
+    <div class="svc"><div class="ic"><svg class="i"><use href="#${s.icon}"/></svg></div>
+    <h3>${s[lang][0]}</h3><p>${s[lang][1]}</p></div>`).join("");
+}
+function renderServiceSelect(){
+  const sel = $("#fService"), cur = sel.value;
+  sel.innerHTML = SERVICES.map(s => `<option value="${s.id}">${s[lang][0]}</option>`).join("");
+  if(cur) sel.value = cur;
+}
+function renderHours(){
+  const order = [6,0,1,2,3,4,5]; // Sat first (Egyptian week)
+  const today = new Date().getDay();
+  $("#hoursTable").innerHTML = order.map(dow => {
+    const d = new Date(2024,0,7+dow); // 7 Jan 2024 was a Sunday
+    const open = CLINIC.openDays.includes(dow);
+    return `<tr class="${open?"":"closed"} ${dow===today?"today":""}"><td>${fmtDate(d,{weekday:"long"})}</td><td>${open?t("hoursRange"):t("closed")}</td></tr>`;
+  }).join("");
+}
+function renderStatus(){
+  const now = new Date(), mins = now.getHours()*60+now.getMinutes();
+  const open = CLINIC.openDays.includes(now.getDay()) && mins>=toMin(CLINIC.openFrom) && mins<toMin(CLINIC.openTo);
+  const el = $("#openStatus"); el.className = "status " + (open?"open":"closed"); el.textContent = open?t("openNow"):t("closedNow");
+}
+function availableDays(){
+  const out = [], today = startOfDay(new Date());
+  for(let i=0;i<=CLINIC.daysAhead;i++){
+    const d = new Date(today); d.setDate(today.getDate()+i);
+    if(!CLINIC.openDays.includes(d.getDay())) continue;
+    if(i===0 && slotsFor(d).every(s=>s.past)) continue; // today but no slots left
+    out.push(d);
+  }
+  return out;
+}
+function slotsFor(day){
+  const res = [], now = new Date(), isToday = sameDay(day, now);
+  const nowMin = now.getHours()*60 + now.getMinutes();
+  for(let m=toMin(CLINIC.openFrom); m+CLINIC.slotMinutes<=toMin(CLINIC.openTo); m+=CLINIC.slotMinutes){
+    res.push({min:m, past: isToday && m <= nowMin + 30}); // need at least 30 min notice
+  }
+  return res;
+}
+function renderDays(){
+  const box = $("#days"), today = startOfDay(new Date());
+  const tmr = new Date(today); tmr.setDate(today.getDate()+1);
+  box.innerHTML = "";
+  availableDays().forEach(d => {
+    const b = document.createElement("button");
+    b.type="button"; b.className = "chip" + (selDay && sameDay(d,selDay) ? " sel":"");
+    const top = sameDay(d,today) ? t("today") : sameDay(d,tmr) ? t("tomorrow") : fmtDate(d,{weekday:"long"});
+    b.innerHTML = `<span class="d1">${top}</span><span class="d2">${fmtDate(d,{day:"numeric",month:"short"})}</span>`;
+    b.onclick = () => { selDay = d; selSlot = null; $("#eDay").classList.remove("show"); renderDays(); renderSlots(); renderSummary(); };
+    box.appendChild(b);
+  });
+}
+function renderSlots(){
+  const box = $("#slots"), hint = $("#slotHint");
+  box.innerHTML = "";
+  if(!selDay){ hint.style.display="block"; hint.textContent = t("pickDayFirst"); return; }
+  const slots = slotsFor(selDay);
+  if(slots.every(s=>s.past)){ hint.style.display="block"; hint.textContent=t("noSlots"); return; }
+  hint.style.display = "none";
+  slots.forEach(s => {
+    const b = document.createElement("button");
+    b.type="button"; b.className = "slot" + (selSlot===s.min ? " sel":""); b.disabled = s.past;
+    b.textContent = fmtTime(s.min);
+    b.onclick = () => { selSlot = s.min; $("#eSlot").classList.remove("show"); renderSlots(); renderSummary(); };
+    box.appendChild(b);
+  });
+}
+function serviceName(){ const s = SERVICES.find(x=>x.id===$("#fService").value); return s ? s[lang][0] : ""; }
+function typeName(){ return $("#fType").selectedOptions[0].textContent; }
+function renderSummary(){
+  const el = $("#summary");
+  if(!(selDay && selSlot!==null)){ el.classList.remove("show"); return; }
+  el.classList.add("show");
+  el.innerHTML = `<b>${t("sumLabel")}</b> ${serviceName()} — ${fmtDate(selDay,{weekday:"long",day:"numeric",month:"long"})} — ${fmtTime(selSlot)}`;
+}
+
+/* ============ SUBMIT ============ */
+function normalizePhone(v){
+  // convert Arabic-Indic digits and strip spaces/dashes
+  return v.replace(/[٠-٩]/g, d => "٠١٢٣٤٥٦٧٨٩".indexOf(d)).replace(/[\s\-()]/g,"").replace(/^\+?20/,"0");
+}
+$("#bookingForm").addEventListener("submit", e => {
+  e.preventDefault();
+  let ok = true;
+  const name = $("#fName").value.trim(), phone = normalizePhone($("#fPhone").value.trim());
+  const chk = (cond, input, err) => { if(input) input.classList.toggle("invalid", !cond); $(err).classList.toggle("show", !cond); if(!cond) ok=false; };
+  chk(name.length >= 2, $("#fName"), "#eName");
+  chk(/^01[0125]\d{8}$/.test(phone), $("#fPhone"), "#ePhone");
+  chk(!!selDay, null, "#eDay");
+  chk(selSlot!==null, null, "#eSlot");
+  if(!ok){ const first = document.querySelector(".err.show"); first && first.scrollIntoView({behavior:"smooth",block:"center"}); return; }
+
+  const notes = $("#fNotes").value.trim();
+  const lines = [
+    t("msgHead"), "",
+    `• ${t("msgName")}: ${name}`,
+    `• ${t("msgPhone")}: ${phone}`,
+    `• ${t("msgService")}: ${serviceName()}`,
+    `• ${t("msgType")}: ${typeName()}`,
+    `• ${t("msgDate")}: ${fmtDate(selDay,{weekday:"long",day:"numeric",month:"long",year:"numeric"})}`,
+    `• ${t("msgTime")}: ${fmtTime(selSlot)}`
+  ];
+  if(notes) lines.push(`• ${t("msgNotes")}: ${notes}`);
+  lines.push("", t("msgFoot"));
+  const url = `https://wa.me/${CLINIC.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`;
+  $("#mWaLink").href = url;
+  window.open(url, "_blank", "noopener");
+  $("#modal").classList.add("show");
+});
+function closeModal(){
+  $("#modal").classList.remove("show");
+  $("#bookingForm").reset(); selDay=null; selSlot=null;
+  renderDays(); renderSlots(); renderSummary();
+}
+$("#mClose").onclick = closeModal;
+$("#modal").addEventListener("click", e => { if(e.target.id==="modal") $("#modal").classList.remove("show"); });
+["#fName","#fPhone"].forEach(id => $(id).addEventListener("input", e => e.target.classList.remove("invalid")));
+$("#fService").addEventListener("change", renderSummary);
+$("#langBtn").onclick = () => { lang = lang==="ar" ? "en" : "ar"; applyLang(); };
+
+$("#yr").textContent = new Date().getFullYear();
+applyLang();
+setInterval(() => { renderStatus(); }, 60000);
+</script>
+</body>
+</html>
